@@ -5,6 +5,8 @@ def concatenate(a, b):
     :param b: вторая строка
     :return: результат конкатенации
     """
-    return a + b
+    if isinstance(a, str) and isinstance(b, str):
+        return a + b
+    return "Необходимо ввести строковые типы данных"
 
 
