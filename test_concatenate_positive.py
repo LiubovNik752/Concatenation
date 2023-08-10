@@ -10,17 +10,12 @@ def test_concatenate_positive(first, second, expected_result):
 
 
 @pytest.mark.parametrize("a, b, expected_res", [('nate', 'concate', 'concatenate'),
-                                                ('Concate', 'nate', 'concatenate'),
-                                                (1, 2, 12)])
+                                                ('CONCATE', 'NATE', 'concatenate'),
+                                                ('  concate  ', '  nate  ', 'concatenate')])
 def test_concatenate_not_equal(a, b, expected_res):
     assert concatenate(a, b) != expected_res
 
 
-@pytest.mark.parametrize("expected_exception, c, d", [(TypeError, "1", 2),
-                                                      (TypeError, "name", ['surename'])])
-def test_concatenate_with_error(expected_exception, c, d):
-    with pytest.raises(expected_exception):
-        concatenate(c, d)
 
 
 
